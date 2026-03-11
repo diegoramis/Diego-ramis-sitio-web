@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="d([docs.github.com](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site?utm_source=chatgpt.com))r de empresas y desarrollador de negocios en Honduras" />
+  <meta name="keywords" content="Diego Ramis, consultor de empresas, desarrollador de negocios, Honduras, estrategia, crecimiento empresarial" />
+  <meta name="author" content="Diego Ramis" />
+  <title>Diego Ramis | Consultor de Empresas y Desarrollador de Negocios</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
+      --radius: 20px;
+      --max-width: 1150px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(248, 250, 252, 0.88);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 24%),
+        linear-gradient(180deg, #f8fbff 0%, #f8fafc 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.06;
+      color: var(--primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .highlight {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(160deg, var(--primary), #111827);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.22);
+      top: -70px;
+      right: -60px;
+    }
+
+    .hero-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card p,
+    .hero-card li,
+    .hero-card a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 20px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-card li {
+      padding-left: 18px;
+      color: rgba(255,255,255,0.88);
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #93c5fd;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-header span {
+      color: var(--accent);
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .services .card {
+      position: relative;
+    }
+
+    .services .card::after {
+      content: "";
+      width: 44px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      top: 0;
+      left: 26px;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-panel-dark {
+      background: linear-gradient(180deg, var(--secondary), var(--primary));
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel-dark h3 {
+      margin-bottom: 14px;
+      font-size: 1.55rem;
+    }
+
+    .about-panel-dark p {
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 14px;
+    }
+
+    .about-panel-light {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .about-list li {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fafcff;
+    }
+
+    .about-list strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+      border-radius: 32px;
+      color: var(--white);
+      padding: 42px;
+      box-shadow: 0 25px 65px rgba(37, 99, 235, 0.20);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.85);
+      max-width: 720px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .btn-outline-light:hover,
+    .btn-light:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .contact-inline {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .about-wrap,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero,
+      section {
+        padding-top: 60px;
+      }
+
+      .hero-card,
+      .about-panel-dark,
+      .about-panel-light,
+      .cta,
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand">Diego Ramis</a>
+      <nav class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#propuesta">Propuesta de valor</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Consultor de empresas · Desarrollador de negocios</span>
+          <h1>Impulsando crecimiento, estrategia y oportunidades de negocio en Honduras</h1>
+          <p>
+            Soy <strong>Diego Ramis</strong>, profesional enfocado en consultoría empresarial, desarrollo comercial y generación de nuevas oportunidades de crecimiento. Acompaño a empresas y líderes en la construcción de estrategias sólidas, alianzas de valor y modelos de negocio orientados a resultados.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:diego.ramis@iot2latam.com">Contactar por correo</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+          </div>
+          <div class="hero-highlights">
+            <div class="highlight">
+              <strong>Estrategia</strong>
+              <span>Diseño de rutas de crecimiento y posicionamiento empresarial.</span>
+            </div>
+            <div class="highlight">
+              <strong>Negocios</strong>
+              <span>Desarrollo de alianzas, expansión comercial y oportunidades B2B.</span>
+            </div>
+            <div class="highlight">
+              <strong>Resultados</strong>
+              <span>Enfoque práctico, ejecutivo y orientado a impacto medible.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Perfil profesional</h3>
+          <p>
+            Una presencia digital diseñada para transmitir experiencia, credibilidad y visión de negocio.
+          </p>
+          <ul>
+            <li>Consultoría para empresas y proyectos de crecimiento</li>
+            <li>Desarrollo y estructuración de oportunidades comerciales</li>
+            <li>Visión estratégica para mercados, alianzas y expansión</li>
+          </ul>
+          <a class="btn btn-light" href="#contacto">Hablemos</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span>Sobre mí</span>
+          <h2>Una propuesta profesional basada en visión estratégica y ejecución</h2>
+          <p>
+            Mi enfoque combina análisis de negocio, pensamiento estratégico y capacidad de ejecución para ayudar a empresas a fortalecer su posicionamiento, identificar nuevas oportunidades y traducir ideas en resultados sostenibles.
+          </p>
+        </div>
+
+        <div class="about-wrap">
+          <div class="about-panel-dark">
+            <h3>Diego Ramis</h3>
+            <p>
+              Me presento como un profesional comprometido con el crecimiento empresarial, la creación de valor y el desarrollo de relaciones estratégicas de largo plazo.
+            </p>
+            <p>
+              Trabajo con una visión orientada a detectar oportunidades, estructurar propuestas viables y apoyar procesos de transformación comercial y organizacional.
+            </p>
+            <div class="contact-inline">
+              <a class="pill" href="mailto:diego.ramis@iot2latam.com">diego.ramis@iot2latam.com</a>
+              <a class="pill" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">LinkedIn profesional</a>
+            </div>
+          </div>
+
+          <div class="about-panel-light">
+            <h3 style="margin-bottom: 12px; color: var(--primary);">Qué aporto</h3>
+            <ul class="about-list">
+              <li>
+                <strong>Perspectiva ejecutiva</strong>
+                Capacidad para entender retos empresariales y convertirlos en planes de acción concretos.
+              </li>
+              <li>
+                <strong>Desarrollo de negocios</strong>
+                Enfoque en crecimiento comercial, relacionamiento estratégico y apertura de nuevas oportunidades.
+              </li>
+              <li>
+                <strong>Consultoría práctica</strong>
+                Propuestas claras, alineadas al contexto del mercado y a los objetivos de cada empresa.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span>Servicios</span>
+          <h2>Áreas en las que puedo aportar valor</h2>
+          <p>
+            Esta página está estructurada para reflejar una imagen profesional, sólida y confiable, adecuada para procesos de networking, presentación ejecutiva y posicionamiento digital.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Consultoría empresarial</h3>
+            <p>
+              Acompañamiento estratégico para empresas que buscan mejorar su enfoque comercial, fortalecer su estructura de crecimiento o desarrollar nuevas líneas de acción.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Desarrollo de negocios</h3>
+            <p>
+              Identificación de oportunidades, construcción de alianzas y apoyo en iniciativas orientadas a expansión, posicionamiento y generación de valor.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Relaciones estratégicas</h3>
+            <p>
+              Impulso a conexiones de alto valor con actores clave, clientes, aliados y organizaciones para potenciar resultados sostenibles.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="propuesta">
+      <div class="container">
+        <div class="section-header">
+          <span>Propuesta de valor</span>
+          <h2>Una presencia profesional clara, moderna y ejecutiva</h2>
+          <p>
+            Este sitio comunica una imagen de confianza, liderazgo y enfoque empresarial. Está pensado para servir como carta de presentación digital ante clientes potenciales, aliados estratégicos y contactos profesionales.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Credibilidad</h3>
+            <p>
+              Diseño sobrio y profesional para proyectar experiencia, seriedad y visión estratégica.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Claridad</h3>
+            <p>
+              Mensajes directos y bien estructurados para comunicar quién eres, qué haces y cómo aportas valor.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Conexión</h3>
+            <p>
+              Integración directa con tu correo y perfil de LinkedIn para facilitar el contacto profesional.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Construyamos nuevas oportunidades de negocio</h2>
+            <p>
+              Si buscas un perfil profesional con enfoque en consultoría empresarial, desarrollo comercial y generación de alianzas estratégicas, estaré encantado de conectar contigo.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="mailto:diego.ramis@iot2latam.com">Enviar correo</a>
+            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Diego Ramis · Consultor de Empresas y Desarrollador de Negocios · Honduras
+    </div>
+  </footer>
+</body>
+</html>
