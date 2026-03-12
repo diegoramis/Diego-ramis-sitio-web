@@ -3,927 +3,604 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Diego Ramis, consultor de empresas y desarrollador de negocios en Honduras" />
-  <meta name="keywords" content="Diego Ramis, consultor de empresas, desarrollador de negocios, Honduras, estrategia, crecimiento empresarial, e-commerce, telecomunicaciones" />
-  <meta name="author" content="Diego Ramis" />
-  <title>Diego Ramis | Consultor de Empresas y Desarrollador de Negocios</title>
-
+  <title>Diego Ramis | Consultor de Negocios</title>
+  <meta name="description" content="Consultor de empresas, desarrollo de negocios en telecomunicaciones y e-commerce." />
+  <style>
+    .banner-strip {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      max-height: 320px;
+      object-fit: cover;
+    }
+  </style>
   <style>
     :root {
-      --primary: #0f172a;
-      --secondary: #1e293b;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --border: #e5e7eb;
-      --shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
-      --radius: 22px;
-      --max-width: 1180px;
+      --bg: #0b1220;
+      --panel: #101a2f;
+      --soft: #16233f;
+      --text: #eef3ff;
+      --muted: #b7c3dd;
+      --accent: #4ea1ff;
+      --accent-2: #7ce0c3;
+      --line: rgba(255,255,255,0.10);
+      --max: 1180px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #08101d 0%, #0b1220 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-    .container { width: min(92%, var(--max-width)); margin: 0 auto; }
 
-    .topbar {
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 10;
       backdrop-filter: blur(14px);
-      background: rgba(248, 250, 252, 0.88);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+      background: rgba(8, 16, 29, 0.72);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
-      gap: 20px;
+      gap: 1rem;
+      padding: 0.9rem 0;
     }
 
     .brand {
-      font-size: 1rem;
       font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.03em;
+      letter-spacing: .02em;
+      font-size: 1.05rem;
     }
+
+    .brand span { color: var(--accent); }
 
     .nav-links {
       display: flex;
-      gap: 20px;
       align-items: center;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .nav-links a,
-    .lang-btn {
+    .nav-links a {
       color: var(--muted);
-      font-weight: 600;
-      transition: 0.25s ease;
+      font-size: 0.95rem;
     }
 
-    .nav-links a:hover,
-    .lang-btn:hover { color: var(--accent); }
-
-    .lang-switcher {
+    .lang-switch {
       display: inline-flex;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 4px;
-      background: var(--white);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
     }
 
-    .lang-btn {
+    .lang-switch button {
       border: 0;
       background: transparent;
-      padding: 8px 14px;
-      border-radius: 999px;
+      color: var(--text);
+      padding: 0.55rem 0.9rem;
       cursor: pointer;
-      font-size: 0.92rem;
+      font-weight: 700;
     }
 
-    .lang-btn.active {
-      background: var(--primary);
-      color: var(--white);
+    .lang-switch button.active {
+      background: linear-gradient(135deg, var(--accent), #6b8dff);
+    }
+
+    .hero {
+      padding: 5.5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid rgba(124, 224, 195, 0.22);
+      border-radius: 999px;
+      background: rgba(124, 224, 195, 0.08);
+      color: var(--accent-2);
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.4rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 999px;
+      gap: .5rem;
+      padding: 0.95rem 1.2rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
       font-weight: 700;
-      border: 1px solid transparent;
-      transition: all 0.25s ease;
-      cursor: pointer;
+      transition: .2s ease;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #6b8dff);
+      border: none;
+      color: white;
     }
 
-    .btn-primary:hover { transform: translateY(-2px); background: #1d4ed8; }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border-color: var(--border);
-    }
-
-    .btn-secondary:hover,
-    .btn-light:hover,
-    .btn-outline-light:hover { transform: translateY(-2px); }
-
-    .hero {
-      padding: 88px 0 56px;
-      background:
-        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 24%),
-        linear-gradient(180deg, #f8fbff 0%, #f8fafc 100%);
-    }
-
-    .hero-banner {
-      margin-bottom: 28px;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      background: var(--white);
-    }
-
-    .hero-banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4.6rem);
-      line-height: 1.05;
-      color: var(--primary);
-      margin-bottom: 18px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-copy p {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 680px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .highlight {
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(229,231,235,0.9);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight strong {
-      display: block;
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    .highlight span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 18px;
-    }
-
-    .profile-card,
-    .hero-card,
-    .card,
-    .about-panel-light,
-    .about-panel-dark,
-    .cta {
-      box-shadow: var(--shadow);
-    }
-
-    .profile-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 26px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .avatar-wrap {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      flex-shrink: 0;
-    }
-
-    .avatar-meta h3 {
-      font-size: 1.35rem;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    .avatar-meta p { color: var(--muted); }
-
-    .mini-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .mini-tag {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: #f3f7ff;
-      border: 1px solid #dbe7ff;
-      color: var(--primary);
-      font-size: 0.92rem;
-      font-weight: 600;
+    .btn.secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
     }
 
     .hero-card {
-      background: linear-gradient(160deg, var(--primary), #111827);
-      color: var(--white);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
       border-radius: 28px;
-      padding: 30px;
-      position: relative;
-      overflow: hidden;
+      padding: 1.2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(37, 99, 235, 0.22);
-      top: -70px;
-      right: -60px;
+    .photo-placeholder {
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(78,161,255,0.28), transparent 30%),
+        linear-gradient(135deg, #152542, #0d1628 70%);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: end;
+      padding: 1.25rem;
+      min-height: 420px;
     }
 
-    .hero-card h3,
-    .hero-card p,
-    .hero-card li,
-    .hero-card a {
-      position: relative;
-      z-index: 1;
+    .photo-badge {
+      background: rgba(11,18,32,0.82);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+      width: 100%;
     }
 
-    .hero-card h3 { font-size: 1.35rem; margin-bottom: 12px; }
-    .hero-card p { color: rgba(255,255,255,0.78); margin-bottom: 16px; }
-    .hero-card ul { list-style: none; display: grid; gap: 10px; margin-bottom: 20px; }
-    .hero-card li { padding-left: 18px; color: rgba(255,255,255,0.88); position: relative; }
-    .hero-card li::before { content: "•"; position: absolute; left: 0; color: #93c5fd; }
-
-    section { padding: 78px 0; }
-
-    .section-header { max-width: 760px; margin-bottom: 34px; }
-
-    .section-header span {
-      color: var(--accent);
-      font-weight: 700;
-      display: inline-block;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.82rem;
+    section {
+      padding: 1.5rem 0 4rem;
     }
 
-    .section-header h2 {
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      color: var(--primary);
-      margin-bottom: 12px;
+    .section-title {
+      font-size: clamp(1.6rem, 2vw, 2.4rem);
+      margin-bottom: 0.6rem;
       letter-spacing: -0.02em;
     }
 
-    .section-header p { color: var(--muted); font-size: 1.02rem; }
+    .section-copy {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 1.5rem;
+    }
 
-    .about-wrap,
-    .cta {
+    .grid-3, .grid-2 {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: stretch;
+      gap: 1.2rem;
     }
 
-    .about-panel-dark {
-      background: linear-gradient(180deg, var(--secondary), var(--primary));
-      color: var(--white);
-      border-radius: 28px;
-      padding: 34px;
-    }
-
-    .about-panel-dark h3 { margin-bottom: 14px; font-size: 1.55rem; }
-    .about-panel-dark p { color: rgba(255,255,255,0.82); margin-bottom: 14px; }
-
-    .about-panel-light {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 34px;
-    }
-
-    .about-list {
-      list-style: none;
-      display: grid;
-      gap: 16px;
-      margin-top: 14px;
-    }
-
-    .about-list li {
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fafcff;
-    }
-
-    .about-list strong {
-      display: block;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    .grid-3 {
-      display: grid;
-      gap: 22px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
     .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 26px;
-      height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.3rem;
     }
 
     .card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       font-size: 1.15rem;
     }
 
-    .card p {
+    .card p, .card li {
       color: var(--muted);
-      font-size: 0.98rem;
     }
 
-    .media-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-      color: var(--accent);
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      padding: 1.1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .time {
+      color: var(--accent-2);
       font-weight: 700;
     }
 
-    .services .card,
-    .experience-card {
-      position: relative;
-    }
-
-    .services .card::after,
-    .experience-card::after {
-      content: "";
-      width: 44px;
-      height: 4px;
-      border-radius: 999px;
-      background: var(--accent);
-      position: absolute;
-      top: 0;
-      left: 26px;
-    }
-
-    .experience-list {
+    .metrics {
       display: grid;
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
-    .experience-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
+    .metric {
+      text-align: center;
+      padding: 1.2rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
     }
 
-    .experience-top {
+    .metric strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: .25rem;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-box {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .experience-top strong {
-      font-size: 1.08rem;
-      color: var(--primary);
-      display: block;
-    }
-
-    .experience-top span,
-    .experience-card p,
-    .experience-card li {
-      color: var(--muted);
-    }
-
-    .experience-card ul {
-      margin-top: 12px;
-      padding-left: 18px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
-      border-radius: 32px;
-      color: var(--white);
-      padding: 42px;
+      gap: 1rem;
       align-items: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: rgba(255,255,255,0.85);
-      max-width: 720px;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: flex-end;
       flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(78,161,255,0.12), rgba(124,224,195,0.08));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.5rem;
     }
 
-    .btn-light {
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    .btn-outline-light {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.45);
-    }
-
-    footer {
-      padding: 34px 0 48px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
-    .contact-inline {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      color: var(--white);
-      font-size: 0.95rem;
+    .muted-note {
+      font-size: 0.88rem;
+      color: #9aa9c9;
+      margin-top: 0.75rem;
     }
 
     [data-lang] { display: none; }
-    html[lang="es"] [data-lang="es"],
-    html[lang="en"] [data-lang="en"] { display: block; }
-    html[lang="es"] [data-lang-inline="es"],
-    html[lang="en"] [data-lang-inline="en"] { display: inline; }
-    [data-lang-inline] { display: none; }
+    html.lang-es [data-lang="es"],
+    html.lang-en [data-lang="en"] { display: block; }
+    html.lang-es .inline-es,
+    html.lang-en .inline-en { display: inline; }
+    .inline-es, .inline-en { display: none; }
 
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .about-wrap,
-      .cta,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-highlights { grid-template-columns: 1fr; }
-      .cta-actions { justify-content: flex-start; }
-    }
-
-    @media (max-width: 640px) {
-      .nav { flex-direction: column; align-items: flex-start; }
-      h1 { font-size: 2.45rem; }
-      .hero, section { padding-top: 60px; }
-      .hero-card, .about-panel-dark, .about-panel-light, .cta, .card, .profile-card, .experience-card {
-        padding: 24px;
-      }
-      .avatar-wrap { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 920px) {
+      .hero-grid, .grid-3, .grid-2, .metrics { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .photo-placeholder { min-height: 320px; }
+      .nav { align-items: start; flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <header>
     <div class="container nav">
-      <a href="#inicio" class="brand">Diego Ramis</a>
-      <nav class="nav-links">
-        <a href="#sobre-mi"><span data-lang-inline="es">Sobre mí</span><span data-lang-inline="en">About</span></a>
-        <a href="#servicios"><span data-lang-inline="es">Servicios</span><span data-lang-inline="en">Services</span></a>
-        <a href="#experiencia"><span data-lang-inline="es">Experiencia</span><span data-lang-inline="en">Experience</span></a>
-        <a href="#proyectos"><span data-lang-inline="es">Proyectos</span><span data-lang-inline="en">Projects</span></a>
-        <a href="#contacto"><span data-lang-inline="es">Contacto</span><span data-lang-inline="en">Contact</span></a>
-        <div class="lang-switcher" aria-label="Language selector">
-          <button class="lang-btn active" data-set-lang="es">ES</button>
-          <button class="lang-btn" data-set-lang="en">EN</button>
+      <div class="brand">Diego <span>Ramis</span></div>
+      <div class="nav-links">
+        <a href="#about"><span class="inline-es">Perfil</span><span class="inline-en">About</span></a>
+        <a href="#services"><span class="inline-es">Servicios</span><span class="inline-en">Services</span></a>
+        <a href="#experience"><span class="inline-es">Experiencia</span><span class="inline-en">Experience</span></a>
+        <a href="#contact"><span class="inline-es">Contacto</span><span class="inline-en">Contact</span></a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button id="btn-es" class="active" type="button">ES</button>
+          <button id="btn-en" type="button">EN</button>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-banner">
-          <img src="ChatGPT Image 12 mar 2026, 09_09_21 a.m..png" alt="Banner profesional de Diego Ramis sobre desarrollo de negocios, e-commerce y telecomunicaciones" />
-        </div>
-
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">
-              <span data-lang-inline="es">Consultor de empresas · Desarrollo de negocios · E-commerce · Telecomunicaciones</span>
-              <span data-lang-inline="en">Business Consultant · Business Development · E-commerce · Telecommunications</span>
-            </span>
-
-            <div data-lang="es">
-              <h1>Impulsando crecimiento, estrategia y oportunidades de negocio en Honduras</h1>
-              <p>Soy <strong>Diego Ramis</strong>, profesional enfocado en consultoría empresarial, desarrollo comercial, e-commerce y telecomunicaciones. Acompaño a empresas y líderes en la construcción de estrategias sólidas, alianzas de valor y modelos de negocio orientados a resultados.</p>
-            </div>
-
-            <div data-lang="en">
-              <h1>Driving growth, strategy, and new business opportunities in Honduras</h1>
-              <p>I am <strong>Diego Ramis</strong>, a professional focused on business consulting, commercial development, e-commerce, and telecommunications. I work with companies and leaders to build solid strategies, valuable partnerships, and business models designed for results.</p>
-            </div>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:diego.ramis@iot2latam.com">
-                <span data-lang-inline="es">Contactar por correo</span>
-                <span data-lang-inline="en">Contact by email</span>
-              </a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-
-            <div class="hero-highlights">
-              <div class="highlight">
-                <strong><span data-lang-inline="es">Estrategia</span><span data-lang-inline="en">Strategy</span></strong>
-                <span data-lang-inline="es">Diseño de rutas de crecimiento y posicionamiento empresarial.</span>
-                <span data-lang-inline="en">Design of growth roadmaps and business positioning strategies.</span>
-              </div>
-              <div class="highlight">
-                <strong><span data-lang-inline="es">Negocios</span><span data-lang-inline="en">Business</span></strong>
-                <span data-lang-inline="es">Desarrollo de alianzas, expansión comercial y oportunidades B2B.</span>
-                <span data-lang-inline="en">Partnership development, commercial expansion, and B2B opportunities.</span>
-              </div>
-              <div class="highlight">
-                <strong><span data-lang-inline="es">Resultados</span><span data-lang-inline="en">Results</span></strong>
-                <span data-lang-inline="es">Enfoque práctico, ejecutivo y orientado a impacto medible.</span>
-                <span data-lang-inline="en">Practical, executive, and impact-oriented approach.</span>
-              </div>
-            </div>
+    <img class="banner-strip" src="/mnt/data/ChatGPT Image 12 mar 2026, 09_09_21 a.m..png" alt="Banner profesional de Diego Ramis" />
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="inline-es">Consultor de negocios • Telecomunicaciones • E-Commerce</span>
+            <span class="inline-en">Business Consultant • Telecommunications • E-Commerce</span>
           </div>
-
-          <div class="hero-side">
-            <aside class="profile-card">
-              <div class="avatar-wrap">
-                <div class="avatar" aria-label="Iniciales de Diego Ramis">DR</div>
-                <div class="avatar-meta">
-                  <h3>Diego Ramis</h3>
-                  <p>
-                    <span data-lang-inline="es">Consultor de empresas y desarrollador de negocios</span>
-                    <span data-lang-inline="en">Business consultant and business developer</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="mini-tags">
-                <span class="mini-tag">Honduras</span>
-                <span class="mini-tag">B2B</span>
-                <span class="mini-tag">E-Commerce</span>
-                <span class="mini-tag">Telecom</span>
-              </div>
-            </aside>
-
-            <aside class="hero-card">
-              <h3><span data-lang-inline="es">Perfil profesional</span><span data-lang-inline="en">Professional profile</span></h3>
-              <p>
-                <span data-lang="es">Una presencia digital diseñada para transmitir experiencia, credibilidad y visión de negocio.</span>
-                <span data-lang="en">A digital presence designed to communicate expertise, credibility, and business vision.</span>
-              </p>
-              <ul>
-                <li><span data-lang-inline="es">Consultoría para empresas y proyectos de crecimiento</span><span data-lang-inline="en">Consulting for companies and growth projects</span></li>
-                <li><span data-lang-inline="es">Desarrollo y estructuración de oportunidades comerciales</span><span data-lang-inline="en">Development and structuring of commercial opportunities</span></li>
-                <li><span data-lang-inline="es">Visión estratégica para mercados, alianzas y expansión</span><span data-lang-inline="en">Strategic vision for markets, partnerships, and expansion</span></li>
-              </ul>
-              <a class="btn btn-light" href="#contacto">
-                <span data-lang-inline="es">Hablemos</span>
-                <span data-lang-inline="en">Let’s connect</span>
-              </a>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre-mi">
-      <div class="container">
-        <div class="section-header">
-          <span><span data-lang-inline="es">Sobre mí</span><span data-lang-inline="en">About</span></span>
 
           <div data-lang="es">
-            <h2>Una propuesta profesional basada en visión estratégica y ejecución</h2>
-            <p>Mi enfoque combina análisis de negocio, pensamiento estratégico y capacidad de ejecución para ayudar a empresas a fortalecer su posicionamiento, identificar nuevas oportunidades y traducir ideas en resultados sostenibles.</p>
+            <h1>Impulso crecimiento, alianzas y transformación comercial.</h1>
+            <p class="lead">
+              Soy Diego Ramis, consultor de empresas y desarrollador de negocios con experiencia en telecomunicaciones,
+              comercio electrónico, desarrollo comercial y transformación de modelos de negocio.
+            </p>
           </div>
 
           <div data-lang="en">
-            <h2>A professional proposition built on strategic vision and execution</h2>
-            <p>My approach combines business analysis, strategic thinking, and execution capabilities to help companies strengthen positioning, identify new opportunities, and turn ideas into sustainable results.</p>
-          </div>
-        </div>
-
-        <div class="about-wrap">
-          <div class="about-panel-dark">
-            <h3>Diego Ramis</h3>
-
-            <div data-lang="es">
-              <p>Me presento como un profesional comprometido con el crecimiento empresarial, la creación de valor y el desarrollo de relaciones estratégicas de largo plazo.</p>
-              <p>Trabajo con una visión orientada a detectar oportunidades, estructurar propuestas viables y apoyar procesos de transformación comercial y organizacional.</p>
-            </div>
-
-            <div data-lang="en">
-              <p>I present myself as a professional committed to business growth, value creation, and the development of long-term strategic relationships.</p>
-              <p>I work with a mindset focused on identifying opportunities, structuring viable proposals, and supporting commercial and organizational transformation.</p>
-            </div>
-
-            <div class="contact-inline">
-              <a class="pill" href="mailto:diego.ramis@iot2latam.com">diego.ramis@iot2latam.com</a>
-              <a class="pill" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+            <h1>I drive growth, partnerships, and commercial transformation.</h1>
+            <p class="lead">
+              I am Diego Ramis, a business consultant and business development professional with experience in telecommunications,
+              e-commerce, commercial strategy, and business model transformation.
+            </p>
           </div>
 
-          <div class="about-panel-light">
-            <h3 style="margin-bottom: 12px; color: var(--primary);">
-              <span data-lang-inline="es">Qué aporto</span>
-              <span data-lang-inline="en">What I bring</span>
-            </h3>
-
-            <ul class="about-list">
-              <li>
-                <strong><span data-lang-inline="es">Perspectiva ejecutiva</span><span data-lang-inline="en">Executive perspective</span></strong>
-                <span data-lang-inline="es">Capacidad para conectar visión estratégica con decisiones prácticas y orientadas a resultados.</span>
-                <span data-lang-inline="en">Ability to connect strategic vision with practical, results-oriented decisions.</span>
-              </li>
-              <li>
-                <strong><span data-lang-inline="es">Desarrollo comercial</span><span data-lang-inline="en">Commercial development</span></strong>
-                <span data-lang-inline="es">Enfoque en crecimiento, alianzas, expansión y generación de oportunidades de negocio.</span>
-                <span data-lang-inline="en">Focus on growth, partnerships, expansion, and business opportunity generation.</span>
-              </li>
-              <li>
-                <strong><span data-lang-inline="es">Experiencia sectorial</span><span data-lang-inline="en">Sector experience</span></strong>
-                <span data-lang-inline="es">Interés y trayectoria vinculados a e-commerce, transformación digital y telecomunicaciones.</span>
-                <span data-lang-inline="en">Interest and background linked to e-commerce, digital transformation, and telecommunications.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios" class="services">
-      <div class="container">
-        <div class="section-header">
-          <span><span data-lang-inline="es">Servicios</span><span data-lang-inline="en">Services</span></span>
-
-          <div data-lang="es">
-            <h2>Áreas de contribución profesional</h2>
-            <p>Servicios y capacidades que pueden apoyar a organizaciones, proyectos y alianzas orientadas al crecimiento.</p>
-          </div>
-
-          <div data-lang="en">
-            <h2>Areas of professional contribution</h2>
-            <p>Services and capabilities that can support organizations, projects, and partnerships focused on growth.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3><span data-lang-inline="es">Desarrollo de negocios</span><span data-lang-inline="en">Business development</span></h3>
-            <p><span data-lang-inline="es">Identificación de oportunidades, estructuración de propuestas y creación de relaciones de valor con clientes, aliados y mercados.</span><span data-lang-inline="en">Opportunity identification, proposal structuring, and creation of value-driven relationships with clients, partners, and markets.</span></p>
-          </article>
-
-          <article class="card">
-            <h3><span data-lang-inline="es">E-commerce y canales digitales</span><span data-lang-inline="en">E-commerce and digital channels</span></h3>
-            <p><span data-lang-inline="es">Visión estratégica para expansión comercial, adopción digital y fortalecimiento de propuestas online orientadas a resultados.</span><span data-lang-inline="en">Strategic vision for commercial expansion, digital adoption, and stronger online value propositions focused on results.</span></p>
-          </article>
-
-          <article class="card">
-            <h3><span data-lang-inline="es">Telecomunicaciones e innovación</span><span data-lang-inline="en">Telecommunications and innovation</span></h3>
-            <p><span data-lang-inline="es">Participación e interés en iniciativas vinculadas a conectividad, evolución tecnológica y posicionamiento sectorial.</span><span data-lang-inline="en">Participation and interest in initiatives related to connectivity, technological evolution, and sector positioning.</span></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experiencia">
-      <div class="container">
-        <div class="section-header">
-          <span><span data-lang-inline="es">Experiencia</span><span data-lang-inline="en">Experience</span></span>
-
-          <div data-lang="es">
-            <h2>Trayectoria orientada a crecimiento, alianzas y ejecución</h2>
-            <p>He diseñado esta sección para mostrar roles, responsabilidades y aportes relevantes con una presentación limpia y ejecutiva.</p>
-          </div>
-
-          <div data-lang="en">
-            <h2>A trajectory focused on growth, partnerships, and execution</h2>
-            <p>This section is designed to present roles, responsibilities, and relevant contributions in a clean executive format.</p>
-          </div>
-        </div>
-
-        <div class="experience-list">
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <strong><span data-lang-inline="es">Consultor de Empresas y Desarrollador de Negocios</span><span data-lang-inline="en">Business Consultant and Business Developer</span></strong>
-                <span><span data-lang-inline="es">Perfil profesional independiente / ejecutivo</span><span data-lang-inline="en">Independent / executive professional profile</span></span>
-              </div>
-              <span><span data-lang-inline="es">Honduras · Actualidad</span><span data-lang-inline="en">Honduras · Present</span></span>
-            </div>
-            <p><span data-lang-inline="es">Asesoría en estrategia empresarial, desarrollo comercial, estructuración de alianzas y exploración de nuevas oportunidades de mercado.</span><span data-lang-inline="en">Advising on business strategy, commercial development, partnership structuring, and the exploration of new market opportunities.</span></p>
-            <ul>
-              <li><span data-lang-inline="es">Diseño de iniciativas orientadas a crecimiento y posicionamiento.</span><span data-lang-inline="en">Design of initiatives focused on growth and positioning.</span></li>
-              <li><span data-lang-inline="es">Apoyo en desarrollo de relaciones estratégicas y generación de valor.</span><span data-lang-inline="en">Support in strategic relationship development and value creation.</span></li>
-              <li><span data-lang-inline="es">Participación en proyectos de innovación, expansión y articulación comercial.</span><span data-lang-inline="en">Participation in innovation, expansion, and commercial articulation projects.</span></li>
-            </ul>
-          </article>
-
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <strong><span data-lang-inline="es">Consultoría estratégica y desarrollo de proyectos</span><span data-lang-inline="en">Strategic consulting and project development</span></strong>
-                <span><span data-lang-inline="es">Empresas, iniciativas y alianzas</span><span data-lang-inline="en">Companies, initiatives, and partnerships</span></span>
-              </div>
-              <span><span data-lang-inline="es">En curso</span><span data-lang-inline="en">Ongoing</span></span>
-            </div>
-            <p><span data-lang-inline="es">Apoyo a proyectos empresariales con foco en estructuración de propuestas, comunicación ejecutiva, relacionamiento institucional y apertura de oportunidades.</span><span data-lang-inline="en">Support for business projects focused on proposal structuring, executive communication, institutional engagement, and opportunity opening.</span></p>
-            <ul>
-              <li><span data-lang-inline="es">Construcción de propuestas de valor y narrativa profesional.</span><span data-lang-inline="en">Building value propositions and professional narratives.</span></li>
-              <li><span data-lang-inline="es">Alineación de iniciativas con objetivos de negocio y mercado.</span><span data-lang-inline="en">Aligning initiatives with business and market objectives.</span></li>
-              <li><span data-lang-inline="es">Soporte en presentación institucional y posicionamiento.</span><span data-lang-inline="en">Support in institutional presentation and positioning.</span></li>
-              <li><span data-lang-inline="es">Participación en iniciativas y eventos sectoriales vinculados a innovación y telecomunicaciones en Honduras.</span><span data-lang-inline="en">Participation in sector initiatives and events linked to innovation and telecommunications in Honduras.</span></li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proyectos">
-      <div class="container">
-        <div class="section-header">
-          <span><span data-lang-inline="es">Proyectos y referencias</span><span data-lang-inline="en">Projects and references</span></span>
-
-          <div data-lang="es">
-            <h2>Publicaciones y eventos destacados</h2>
-            <p>Una muestra de participación en contenidos publicados y en hitos relevantes del sector telecomunicaciones en Honduras.</p>
-          </div>
-
-          <div data-lang="en">
-            <h2>Featured publications and events</h2>
-            <p>A snapshot of participation in published content and relevant milestones within the telecommunications sector in Honduras.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3><span data-lang-inline="es">Artículo publicado</span><span data-lang-inline="en">Published article</span></h3>
-            <p><span data-lang-inline="es">Referencia a un artículo publicado y disponible en Google Drive, incorporado como parte del perfil profesional y trayectoria pública.</span><span data-lang-inline="en">Reference to a published article available on Google Drive, included as part of the professional profile and public track record.</span></p>
-            <a class="media-link" href="https://drive.google.com/file/d/1cRZjJO58GKHR4RzwV4v2DkikHbCYE7LZ/view" target="_blank" rel="noopener noreferrer">
-              <span data-lang-inline="es">Ver artículo</span>
-              <span data-lang-inline="en">View article</span>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">
+              <span class="inline-es">Hablemos</span>
+              <span class="inline-en">Let’s talk</span>
             </a>
-          </article>
-
-          <article class="card">
-            <h3><span data-lang-inline="es">Lanzamiento de 4G de Tigo Honduras</span><span data-lang-inline="en">Tigo Honduras 4G launch</span></h3>
-            <p><span data-lang-inline="es">Referencia al evento de lanzamiento de 4G de Tigo Honduras, como parte de los hitos relevantes del sector telecomunicaciones en el país.</span><span data-lang-inline="en">Reference to the 4G launch event by Tigo Honduras as part of relevant milestones in the telecommunications sector in the country.</span></p>
-            <a class="media-link" href="https://www.revistaestilo.net/tendencias/una-increible-experiencia-JWES776294" target="_blank" rel="noopener noreferrer">
-              <span data-lang-inline="es">Ver cobertura del evento</span>
-              <span data-lang-inline="en">View event coverage</span>
+            <a class="btn secondary" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
             </a>
-          </article>
+          </div>
 
-          <article class="card">
-            <h3><span data-lang-inline="es">Enfoque sectorial</span><span data-lang-inline="en">Sector focus</span></h3>
-            <p><span data-lang-inline="es">El sitio integra experiencia en <strong>desarrollo de negocios</strong>, <strong>e-commerce</strong> y <strong>telecomunicaciones</strong>, proyectando una narrativa ejecutiva orientada a crecimiento, innovación y alianzas estratégicas.</span><span data-lang-inline="en">The site brings together experience in <strong>business development</strong>, <strong>e-commerce</strong>, and <strong>telecommunications</strong>, projecting an executive narrative focused on growth, innovation, and strategic partnerships.</span></p>
-          </article>
+          <p class="muted-note">
+            <span class="inline-es">Sitio bilingüe con selector de idioma. Preparado para agregar foto de perfil, logotipos y casos de éxito.</span>
+            <span class="inline-en">Bilingual site with language switcher. Ready to add profile photo, logos, and case studies.</span>
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="photo-placeholder" style="padding:0; overflow:hidden; position:relative;" role="img" aria-label="Foto profesional de Diego Ramis">
+            <img src="/mnt/data/foto-diego.jpg" alt="Diego Ramis" style="width:100%; height:100%; object-fit:cover;" />
+            <div class="photo-badge" style="position:absolute; left:1rem; right:1rem; bottom:1rem;">
+              <strong>Diego Ramis</strong>
+              <div>
+                <span class="inline-es">Consultor de empresas | Desarrollo de negocios | E-Commerce | Telecom</span>
+                <span class="inline-en">Business Consultant | Business Development | E-Commerce | Telecom</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <div class="container">
-        <div class="cta">
+    <section id="about" class="container">
+      <div data-lang="es">
+        <h2 class="section-title">Perfil profesional</h2>
+        <p class="section-copy">
+          Acompaño empresas en procesos de crecimiento, estructuración comercial, expansión de negocios y construcción de alianzas estratégicas.
+          Mi enfoque combina visión comercial, entendimiento de mercados, ejecución práctica y capacidad para conectar oportunidades en sectores como telecomunicaciones, tecnología y comercio electrónico.
+        </p>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Professional profile</h2>
+        <p class="section-copy">
+          I support companies in growth processes, commercial structuring, business expansion, and strategic partnership development.
+          My approach combines commercial vision, market understanding, practical execution, and the ability to connect opportunities across telecommunications, technology, and e-commerce.
+        </p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <strong>Telecom</strong>
+          <span class="inline-es">Desarrollo comercial y ecosistemas</span>
+          <span class="inline-en">Commercial development and ecosystems</span>
+        </div>
+        <div class="metric">
+          <strong>E-Commerce</strong>
+          <span class="inline-es">Canales, pagos y crecimiento digital</span>
+          <span class="inline-en">Channels, payments, and digital growth</span>
+        </div>
+        <div class="metric">
+          <strong>B2B</strong>
+          <span class="inline-es">Relaciones, alianzas y expansión</span>
+          <span class="inline-en">Relationships, partnerships, and expansion</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <div data-lang="es">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-copy">Trabajo con empresas que necesitan crecer, abrir mercado, fortalecer su propuesta comercial o acelerar su transformación digital.</p>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Services</h2>
+        <p class="section-copy">I work with companies that need to grow, enter new markets, strengthen their commercial proposition, or accelerate digital transformation.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3><span class="inline-es">Consultoría comercial</span><span class="inline-en">Commercial consulting</span></h3>
+          <p>
+            <span class="inline-es">Diagnóstico comercial, redefinición de propuesta de valor, canales de venta, estructura de relacionamiento y expansión B2B.</span>
+            <span class="inline-en">Commercial diagnosis, value proposition redesign, sales channels, relationship structure, and B2B expansion.</span>
+          </p>
+        </article>
+        <article class="card">
+          <h3><span class="inline-es">Desarrollo de negocios en telecomunicaciones</span><span class="inline-en">Telecommunications business development</span></h3>
+          <p>
+            <span class="inline-es">Identificación de oportunidades, alianzas, agregadores, soluciones digitales y construcción de nuevos modelos de ingreso.</span>
+            <span class="inline-en">Opportunity identification, partnerships, aggregators, digital solutions, and new revenue model design.</span>
+          </p>
+        </article>
+        <article class="card">
+          <h3><span class="inline-es">E-Commerce y transformación digital</span><span class="inline-en">E-commerce and digital transformation</span></h3>
+          <p>
+            <span class="inline-es">Diseño de iniciativas de comercio electrónico, integración de pagos, experiencia del cliente y crecimiento de ventas digitales.</span>
+            <span class="inline-en">E-commerce initiative design, payment integration, customer experience, and digital sales growth.</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <div data-lang="es">
+        <h2 class="section-title">Resumen de experiencia</h2>
+        <p class="section-copy">Esta versión resume la experiencia profesional visible públicamente y la organiza en una narrativa clara para fines comerciales.</p>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Experience summary</h2>
+        <p class="section-copy">This version summarizes publicly visible professional experience and organizes it into a clear commercial narrative.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="time"><span class="inline-es">Actualidad</span><span class="inline-en">Current</span></div>
           <div>
-            <div data-lang="es">
-              <h2>Construyamos nuevas oportunidades de negocio</h2>
-              <p>Si buscas un perfil profesional con enfoque en consultoría empresarial, desarrollo comercial y generación de alianzas estratégicas, estaré encantado de conectar contigo.</p>
-            </div>
-            <div data-lang="en">
-              <h2>Let’s build new business opportunities</h2>
-              <p>If you are looking for a professional profile focused on business consulting, commercial development, and strategic partnerships, I would be glad to connect with you.</p>
-            </div>
+            <strong>Valor Humano</strong>
+            <p>
+              <span class="inline-es">Consultoría orientada a desarrollo de negocios, comercio electrónico y cultura/clima organizacional.</span>
+              <span class="inline-en">Consulting focused on business development, e-commerce, and organizational culture/climate.</span>
+            </p>
           </div>
+        </div>
 
-          <div class="cta-actions">
-            <a class="btn btn-light" href="mailto:diego.ramis@iot2latam.com">
-              <span data-lang-inline="es">Enviar correo</span>
-              <span data-lang-inline="en">Send email</span>
-            </a>
-            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">
-              <span data-lang-inline="es">Conectar en LinkedIn</span>
-              <span data-lang-inline="en">Connect on LinkedIn</span>
-            </a>
+        <div class="timeline-item">
+          <div class="time">Telecom & Tech</div>
+          <div>
+            <strong><span class="inline-es">Desarrollo de negocios en tecnología y telecomunicaciones</span><span class="inline-en">Business development in technology and telecommunications</span></strong>
+            <p>
+              <span class="inline-es">Participación en iniciativas relacionadas con soluciones tecnológicas, conectividad, integración comercial y apertura de oportunidades regionales.</span>
+              <span class="inline-en">Participation in initiatives related to technology solutions, connectivity, commercial integration, and regional opportunity development.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">E-Commerce</div>
+          <div>
+            <strong><span class="inline-es">Estrategia comercial y canales digitales</span><span class="inline-en">Commercial strategy and digital channels</span></strong>
+            <p>
+              <span class="inline-es">Experiencia promoviendo venta online, ecosistemas digitales y evolución estratégica del e-commerce en Latinoamérica.</span>
+              <span class="inline-en">Experience promoting online sales, digital ecosystems, and the strategic evolution of e-commerce in Latin America.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">2019+</div>
+          <div>
+            <strong>IOT 2 Latam</strong>
+            <p>
+              <span class="inline-es">Mención pública como Gerente General en directorio empresarial, vinculada a servicios de tecnología e iniciativas regionales.</span>
+              <span class="inline-en">Public mention as General Manager in a business directory, linked to technology services and regional initiatives.</span>
+            </p>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="container">
+      <div data-lang="es">
+        <h2 class="section-title">Propuesta de valor</h2>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Value proposition</h2>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3><span class="inline-es">Lo que aporto</span><span class="inline-en">What I bring</span></h3>
+          <ul>
+            <li><span class="inline-es">Visión estratégica con orientación comercial</span><span class="inline-en">Strategic vision with commercial focus</span></li>
+            <li><span class="inline-es">Capacidad para abrir relaciones y alianzas</span><span class="inline-en">Ability to open relationships and partnerships</span></li>
+            <li><span class="inline-es">Experiencia en mercados digitales y telecom</span><span class="inline-en">Experience in digital markets and telecom</span></li>
+            <li><span class="inline-es">Enfoque práctico y orientado a resultados</span><span class="inline-en">Practical and results-oriented approach</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="inline-es">Ideal para</span><span class="inline-en">Best suited for</span></h3>
+          <ul>
+            <li><span class="inline-es">Empresas que buscan crecer en nuevos mercados</span><span class="inline-en">Companies looking to grow in new markets</span></li>
+            <li><span class="inline-es">Operadores, agregadores o aliados del ecosistema telecom</span><span class="inline-en">Operators, aggregators, or partners in the telecom ecosystem</span></li>
+            <li><span class="inline-es">Negocios que quieren fortalecer su canal digital</span><span class="inline-en">Businesses aiming to strengthen their digital channel</span></li>
+            <li><span class="inline-es">Organizaciones que requieren una mirada comercial externa</span><span class="inline-en">Organizations that need an external commercial perspective</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="contact-box">
+        <div>
+          <h2 class="section-title" style="margin:0 0 .4rem;">
+            <span class="inline-es">Conversemos sobre tu próximo proyecto</span>
+            <span class="inline-en">Let’s talk about your next project</span>
+          </h2>
+          <p style="margin:0; color: var(--muted);">
+            <span class="inline-es">Disponible para consultoría, alianzas estratégicas, desarrollo comercial y proyectos de expansión.</span>
+            <span class="inline-en">Available for consulting, strategic partnerships, commercial development, and expansion projects.</span>
+          </p>
+        </div>
+        <div class="cta-row" style="margin-top:0;">
+          <a class="btn primary" href="https://www.linkedin.com/in/diegoramiscaffiro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn secondary" href="mailto:diego.ramis@iot2latam.com">
+            <span class="inline-es">Escríbeme</span>
+            <span class="inline-en">Email me</span>
+          </a>
+        </div>
+      </div>
+      <p class="muted-note">
+        <span class="inline-es">Correo directo: diego.ramis@iot2latam.com</span>
+        <span class="inline-en">Direct email: diego.ramis@iot2latam.com</span>
+      </p>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="container">
-      © 2026 Diego Ramis · <span data-lang-inline="es">Consultor de Empresas y Desarrollador de Negocios</span><span data-lang-inline="en">Business Consultant and Business Developer</span> · Honduras
+      © <span id="year"></span> Diego Ramis. <span class="inline-es">Sitio web profesional bilingüe.</span><span class="inline-en">Bilingual professional website.</span>
     </div>
   </footer>
 
   <script>
-    const buttons = document.querySelectorAll('[data-set-lang]');
-    const root = document.documentElement;
+    const html = document.documentElement;
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
 
-    function setLanguage(lang) {
-      root.lang = lang;
-      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.setLang === lang));
+    function setLang(lang) {
+      html.classList.remove('lang-es', 'lang-en');
+      html.classList.add(`lang-${lang}`);
+      btnEs.classList.toggle('active', lang === 'es');
+      btnEn.classList.toggle('active', lang === 'en');
+      localStorage.setItem('site-lang', lang);
+      document.documentElement.lang = lang;
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
-    });
+    btnEs.addEventListener('click', () => setLang('es'));
+    btnEn.addEventListener('click', () => setLang('en'));
+
+    const savedLang = localStorage.getItem('site-lang') || 'es';
+    setLang(savedLang);
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
+</body
